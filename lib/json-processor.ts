@@ -1266,18 +1266,17 @@ export async function processJsonDataAsync(
       throw new Error('No geographies found in any data source. Please check your JSON structure.')
     }
 
-    // Extract regions AND countries from "By Region" segment type as additional geographies
-    // This builds a full geography hierarchy: Global > Regions > Countries
+    // Extract regions AND countries from "By Region" or "By Country" segment types
+    // This builds a full geography hierarchy: Global > Regions > Countries (or Region > Countries)
     const regionGeographies: string[] = []
     const regionToCountries: Record<string, string[]> = {}
     const allCountries: string[] = []
     for (const topGeo of geographies) {
       const geoData = structureData[topGeo]
       if (geoData && typeof geoData === 'object') {
-        // Look for "By Region" segment type
+        // Look for "By Region" segment type (Global-level: Region -> Countries)
         const byRegionData = geoData['By Region']
         if (byRegionData && typeof byRegionData === 'object') {
-          // Extract region names (first level keys under "By Region")
           const regions = Object.keys(byRegionData).filter(key => {
             const value = byRegionData[key]
             return value && typeof value === 'object' && !Array.isArray(value)
@@ -1286,7 +1285,6 @@ export async function processJsonDataAsync(
             if (!regionGeographies.includes(region) && !geographies.includes(region)) {
               regionGeographies.push(region)
             }
-            // Extract countries under each region (second level keys, excluding the region name itself)
             const regionData = byRegionData[region]
             if (regionData && typeof regionData === 'object') {
               const countries = Object.keys(regionData).filter(key => {
@@ -1303,17 +1301,50 @@ export async function processJsonDataAsync(
             }
           })
         }
+
+        // Look for "By Country" segment type (Region-level: topGeo -> Countries)
+        const byCountryData = geoData['By Country']
+        if (byCountryData && typeof byCountryData === 'object') {
+          const countries = Object.keys(byCountryData).filter(key => {
+            const value = byCountryData[key]
+            return value && typeof value === 'object' && !Array.isArray(value)
+          })
+          if (countries.length > 0) {
+            if (!regionGeographies.includes(topGeo)) {
+              regionGeographies.push(topGeo)
+            }
+            if (!regionToCountries[topGeo]) {
+              regionToCountries[topGeo] = []
+            }
+            countries.forEach(country => {
+              if (!regionToCountries[topGeo].includes(country)) {
+                regionToCountries[topGeo].push(country)
+              }
+              if (!allCountries.includes(country)) {
+                allCountries.push(country)
+              }
+            })
+          }
+        }
       }
     }
 
-    // Add regions and countries to geographies list
+    // Add regions and countries to geographies list (avoid duplicates)
+    const existingGeoSet = new Set(geographies)
     if (regionGeographies.length > 0) {
-      console.log(`Found ${regionGeographies.length} regions from "By Region":`, regionGeographies)
-      geographies = [...geographies, ...regionGeographies]
+      const newRegions = regionGeographies.filter(r => !existingGeoSet.has(r))
+      if (newRegions.length > 0) {
+        console.log(`Found ${newRegions.length} new regions from "By Region":`, newRegions)
+        geographies = [...geographies, ...newRegions]
+        newRegions.forEach(r => existingGeoSet.add(r))
+      }
     }
     if (allCountries.length > 0) {
-      console.log(`Found ${allCountries.length} countries from "By Region":`, allCountries)
-      geographies = [...geographies, ...allCountries]
+      const newCountries = allCountries.filter(c => !existingGeoSet.has(c))
+      if (newCountries.length > 0) {
+        console.log(`Found ${newCountries.length} new countries from geography segment:`, newCountries)
+        geographies = [...geographies, ...newCountries]
+      }
     }
 
     console.log(`Found ${geographies.length} total geographies:`, geographies)
@@ -1472,7 +1503,7 @@ export async function processJsonDataAsync(
     
     // Build metadata
     const metadata: Metadata = {
-      market_name: 'Normothermic Machine Perfusion Market',
+      market_name: 'Fall Detection Market',
       market_type: 'Market Analysis',
       industry: 'Healthcare & Pharmaceuticals',
       years: allYears,

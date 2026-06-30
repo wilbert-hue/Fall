@@ -1,63 +1,131 @@
 {
-  "Global": {
-    "By Type": {
-      "Sub-Normothermic Perfusion (20–34°C)": {},
-      "Warm or Normothermic Perfusion (35–37°C)": {}
-    },
-    "By Organ Type": {
-      "Liver": {},
-      "Heart": {},
-      "Lung": {},
-      "Kidney": {},
-      "Others (Pancreas, Small bowel / Intestine, Composite Tissues / Limb Perfusion (emerging use cases))": {}
-    },
-    "Application / Use Case": {
-      "Organ Preservation": {},
-      "Viability Assessment": {},
-      "Physiologic Transport": {},
-      "Reconditioning Marginal Organs": {},
-      "Others (Research Use / Protocol development)": {}
+  "Europe": {
+    "By Solution Type": {
+      "Integrated Fall Detection Platform / Solution": {},
+      "Wearable Fall Detection Devices": {},
+      "Non-wearable Devices/Systems": {}
     },
     "By End User": {
-      "Hospitals & Clinics": {},
-      "Specialty Clinic/Centers": {},
-      "Transplant Centers": {},
-      "Others (Research Institutes/Centers, Organ Procurement Organizations, etc.)": {}
+      "Home Care Settings": {},
+      "Senior Living / Assisted Living Facilities": {},
+      "Nursing Homes / EHPADs/ Long-term Care Facilities": {},
+      "Hospitals": {},
+      "Rehabilitation Centers": {},
+      "Others (Public Healthcare and Social Care Organizations, Academic & Research Institutes & Others)": {}
     },
-    "By Region": {
-      "North America": {
-        "U.S.": {},
-        "Canada": {}
-      },
-      "Europe": {
-        "U.K.": {},
-        "Germany": {},
-        "Italy": {},
-        "France": {},
-        "Spain": {},
-        "Russia": {},
-        "Rest of Europe": {}
-      },
-      "Asia Pacific": {
-        "China": {},
-        "India": {},
-        "Japan": {},
-        "South Korea": {},
-        "ASEAN": {},
-        "Australia": {},
-        "Rest of Asia Pacific": {}
-      },
-      "Latin America": {
-        "Brazil": {},
-        "Argentina": {},
-        "Mexico": {},
-        "Rest of Latin America": {}
-      },
-      "Middle East & Africa": {
-        "GCC": {},
-        "South Africa": {},
-        "Rest of Middle East & Africa": {}
-      }
+    "By Country": {
+      "Germany": {},
+      "U.K.": {},
+      "France": {},
+      "Italy": {},
+      "Spain": {},
+      "Russia": {},
+      "Rest of Europe": {}
+    }
+  },
+  "Germany": {
+    "By Solution Type": {
+      "Integrated Fall Detection Platform / Solution": {},
+      "Wearable Fall Detection Devices": {},
+      "Non-wearable Devices/Systems": {}
+    },
+    "By End User": {
+      "Home Care Settings": {},
+      "Senior Living / Assisted Living Facilities": {},
+      "Nursing Homes / EHPADs/ Long-term Care Facilities": {},
+      "Hospitals": {},
+      "Rehabilitation Centers": {},
+      "Others (Public Healthcare and Social Care Organizations, Academic & Research Institutes & Others)": {}
+    }
+  },
+  "U.K.": {
+    "By Solution Type": {
+      "Integrated Fall Detection Platform / Solution": {},
+      "Wearable Fall Detection Devices": {},
+      "Non-wearable Devices/Systems": {}
+    },
+    "By End User": {
+      "Home Care Settings": {},
+      "Senior Living / Assisted Living Facilities": {},
+      "Nursing Homes / EHPADs/ Long-term Care Facilities": {},
+      "Hospitals": {},
+      "Rehabilitation Centers": {},
+      "Others (Public Healthcare and Social Care Organizations, Academic & Research Institutes & Others)": {}
+    }
+  },
+  "France": {
+    "By Solution Type": {
+      "Integrated Fall Detection Platform / Solution": {},
+      "Wearable Fall Detection Devices": {},
+      "Non-wearable Devices/Systems": {}
+    },
+    "By End User": {
+      "Home Care Settings": {},
+      "Senior Living / Assisted Living Facilities": {},
+      "Nursing Homes / EHPADs/ Long-term Care Facilities": {},
+      "Hospitals": {},
+      "Rehabilitation Centers": {},
+      "Others (Public Healthcare and Social Care Organizations, Academic & Research Institutes & Others)": {}
+    }
+  },
+  "Italy": {
+    "By Solution Type": {
+      "Integrated Fall Detection Platform / Solution": {},
+      "Wearable Fall Detection Devices": {},
+      "Non-wearable Devices/Systems": {}
+    },
+    "By End User": {
+      "Home Care Settings": {},
+      "Senior Living / Assisted Living Facilities": {},
+      "Nursing Homes / EHPADs/ Long-term Care Facilities": {},
+      "Hospitals": {},
+      "Rehabilitation Centers": {},
+      "Others (Public Healthcare and Social Care Organizations, Academic & Research Institutes & Others)": {}
+    }
+  },
+  "Spain": {
+    "By Solution Type": {
+      "Integrated Fall Detection Platform / Solution": {},
+      "Wearable Fall Detection Devices": {},
+      "Non-wearable Devices/Systems": {}
+    },
+    "By End User": {
+      "Home Care Settings": {},
+      "Senior Living / Assisted Living Facilities": {},
+      "Nursing Homes / EHPADs/ Long-term Care Facilities": {},
+      "Hospitals": {},
+      "Rehabilitation Centers": {},
+      "Others (Public Healthcare and Social Care Organizations, Academic & Research Institutes & Others)": {}
+    }
+  },
+  "Russia": {
+    "By Solution Type": {
+      "Integrated Fall Detection Platform / Solution": {},
+      "Wearable Fall Detection Devices": {},
+      "Non-wearable Devices/Systems": {}
+    },
+    "By End User": {
+      "Home Care Settings": {},
+      "Senior Living / Assisted Living Facilities": {},
+      "Nursing Homes / EHPADs/ Long-term Care Facilities": {},
+      "Hospitals": {},
+      "Rehabilitation Centers": {},
+      "Others (Public Healthcare and Social Care Organizations, Academic & Research Institutes & Others)": {}
+    }
+  },
+  "Rest of Europe": {
+    "By Solution Type": {
+      "Integrated Fall Detection Platform / Solution": {},
+      "Wearable Fall Detection Devices": {},
+      "Non-wearable Devices/Systems": {}
+    },
+    "By End User": {
+      "Home Care Settings": {},
+      "Senior Living / Assisted Living Facilities": {},
+      "Nursing Homes / EHPADs/ Long-term Care Facilities": {},
+      "Hospitals": {},
+      "Rehabilitation Centers": {},
+      "Others (Public Healthcare and Social Care Organizations, Academic & Research Institutes & Others)": {}
     }
   }
 }

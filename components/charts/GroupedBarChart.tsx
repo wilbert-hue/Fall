@@ -125,8 +125,8 @@ export function GroupedBarChart({ title, height = 400 }: GroupedBarChartProps) {
       }
     }
 
-    // Extract "By Region" records for proportional geography distribution
-    const byRegionRecords = dataset.filter(r => r.segment_type === 'By Region')
+    // Extract "By Country" records for proportional geography distribution
+    const byRegionRecords = dataset.filter(r => r.segment_type === 'By Country')
     const geographyCountries = data.dimensions.geographies.countries
 
     // Prepare chart data

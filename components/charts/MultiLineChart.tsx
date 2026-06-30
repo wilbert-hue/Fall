@@ -48,8 +48,8 @@ export function MultiLineChart({ title, height = 400 }: MultiLineChartProps) {
       }
     }
 
-    // Extract "By Region" records for proportional geography distribution
-    const byRegionRecords = dataset.filter(r => r.segment_type === 'By Region')
+    // Extract "By Country" records for proportional geography distribution
+    const byRegionRecords = dataset.filter(r => r.segment_type === 'By Country')
     const geographyCountries = data.dimensions.geographies.countries
 
     // Use prepareLineChartData when we have an effective aggregation level
